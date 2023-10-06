@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ECharts Example</title>
+    <!-- Include ECharts library -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <!-- Create a container for the chart -->
+    <div id="chart" style="width: 800px; height: 400px;"></div>
+
+    <script>
+        // JSON data (ECharts format)
+        const echartData = {
+            "iscardenabled": true,
+            "tabledata": [
+                {
+                    "vmn": 919945272877,
+                    "count": "908",
+                    "color": "#5E548E"
+                },
+                {
+                    "vmn": 919223022345,
+                    "count": "96",
+                    "color": "#B8BEDD"
+                },
+                {
+                    "vmn": 56161,
+                    "count": "1",
+                    "color": "#F0A6CA"
+                }
+            ],
+            "chartdata": {
+                "type": "bubble",
+                "background-color": "#ffffff #ffffff",
+                "plot": {
+                    "scaling": "radius",
+                    "size-factor": 1.5,
+                    "selection-mode": "none",
+                    "hover-marker": {
+                        "visible": false
+                    },
+                    "hover-state": {
+                        "visible": false
+                    }
+                },
+                "series": [
+                    {
+                        "values": [
+                            [24, 2, "1"]
+                        ],
+                        "marker": {
+                            "background-image": "PATTERN_LARGE_CHECKER_BOARD",
+                            "background-color": "#F0A6CA",
+                            "alpha": "0.75"
+                        },
+                        "selected-marker": {
+                            "background-color": "#EEEEEE",
+                            "alpha": 0.25
+                        },
+                        "value-box": {
+                            "text": "1",
+                            "placement": "top",
+                            "font-color": "#141414",
+                            "font-weight": "normal",
+                            "font-family": "Tahoma"
+                        },
+                        "tooltip": {
+                            "text": "<strong>56161</strong><br>1",
+                            "background-color": "#000000",
+                            "shadow": false,
+                            "thousands-separator": ","
+                        }
+                    },
+                    {
+                        "values": [
+                            [36, 2, "96"]
+                        ],
+                        "marker": {
+                            "background-image": "PATTERN_LARGE_CHECKER_BOARD",
+                            "background-color": "#B8BEDD",
+                            "alpha": "0.75"
+                        },
+                        "selected-marker": {
+                            "background-color": "#EEEEEE",
+                            "alpha": 0.25
+                        },
+                        "value-box": {
+                            "text": "96",
+                            "placement": "top",
+                            "font-color": "#141414",
+                            "font-weight": "normal",
+                            "font-family": "Tahoma"
+                        },
+                        "tooltip": {
+                            "text": "<strong>919223022345</strong><br>96",
+                            "background-color": "#000000",
+                            "shadow": false,
+                            "thousands-separator": ","
+                        }
+                    },
+                    {
+                        "values": [
+                            [48, 2, "908"]
+                        ],
+                        "marker": {
+                            "background-image": "PATTERN_LARGE_CHECKER_BOARD",
+                            "background-color": "#5E548E",
+                            "alpha": "0.75"
+                        },
+                        "selected-marker": {
+                            "background-color": "#EEEEEE",
+                            "alpha": 0.25
+                        },
+                        "value-box": {
+                            "text": "908",
+                            "placement": "top",
+                            "font-color": "#141414",
+                            "font-weight": "normal",
+                            "font-family": "Tahoma"
+                        },
+                        "tooltip": {
+                            "text": "<strong>919945272877</strong><br>908",
+                            "background-color": "#000000",
+                            "shadow": false,
+                            "thousands-separator": ","
+                        }
+                    }
+                ]
+            },
+            "hasdata": true
+        };
+
+        // Create an ECharts instance
+        const myChart = echarts.init(document.getElementById('chart'));
+
+        // Set the ECharts option based on the provided data
+        const option = echartData.chartdata;
+
+        // Set the chart option and render the chart
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
